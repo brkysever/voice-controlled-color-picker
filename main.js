@@ -37,9 +37,9 @@ class ColorPicker {
       Just say "Reset '$color-name'" and you will start over.
       <a href="https://en.wikipedia.org/wiki/RGB_color_model">Learn more about RGB Colors</a>`;
     } else if (this.firstCall || reset) {
-      Object.keys(this.color).forEach(
-        resetColor => (this.color[resetColor] = 0)
-      );
+      this.colors.red = 0;
+      this.colors.green = 0;
+      this.colors.blue = 0;
       this.colors[color] = 255;
       this.firstCall = false;
     } else if (aLittle) {
