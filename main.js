@@ -1,7 +1,7 @@
 class ColorPicker {
   constructor() {
     this.body = document.querySelector('body');
-    this.showColorPicked = document.querySelector('.color__picker__hi');
+    this.showColorPicked = document.querySelector('.colorPicker__hi');
     this.colors = { red: 0, green: 0, blue: 0 };
     this.firstCall = true;
   }
@@ -36,8 +36,7 @@ class ColorPicker {
       this.showColorPicked.innerHTML = `Seems you are stuck with white. This is what happens if you blend too much of everything. <br/>
       Just say "Reset '$color-name'" and you will start over.
       <a href="https://en.wikipedia.org/wiki/RGB_color_model">Learn more about RGB Colors</a>`;
-    }
-    if (this.firstCall || reset) {
+    } else if (this.firstCall || reset) {
       Object.keys(this.color).forEach(
         resetColor => (this.color[resetColor] = 0)
       );
