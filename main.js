@@ -35,9 +35,9 @@ class ColorPicker {
       this.colors[color] = 255;
       this.firstCall = false;
     } else if (aLittle) {
-      !less ? (this.colors[color] += 30) : (this.colors[color] -= 30);
+      !less ? (this.colors[color] += 26) : (this.colors[color] -= 26);
     } else {
-      !less ? (this.colors[color] += 120) : (this.colors[color] -= 120);
+      !less ? (this.colors[color] += 76) : (this.colors[color] -= 76);
     }
     const rgb = this._colorsToRgba();
     this.setColor(rgb);
