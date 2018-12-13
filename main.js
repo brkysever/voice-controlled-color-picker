@@ -6,6 +6,11 @@ class ColorPicker {
     this.firstCall = true;
   }
 
+  _setColor(color) {
+    this.body.style.backgroundColor = color;
+    this._getHex(color);
+  }
+
   _getHex(rgb) {
     // https://jsfiddle.net/Mottie/xcqpF/1/light/
     const color = rgb.match(
@@ -34,9 +39,11 @@ class ColorPicker {
       this.colors.blue >= 250
     ) {
       this.showColorPicked.innerHTML = `Seems you are stuck with white. This is what happens if you blend too much of everything. <br/>
-      Just say "Reset '$color-name'" and you will start over.
-      <a href="https://en.wikipedia.org/wiki/RGB_color_model">Learn more about RGB Colors</a>`;
-    } else if (this.firstCall || reset) {
+        Just say "Reset '$color-name'" and you will start over.
+        <a href="https://en.wikipedia.org/wiki/RGB_color_model">Learn more about RGB Colors</a>`;
+      return;
+    }
+    if (this.firstCall || reset) {
       this.colors.red = 0;
       this.colors.green = 0;
       this.colors.blue = 0;
@@ -47,17 +54,13 @@ class ColorPicker {
     } else {
       !less ? (this.colors[color] += 76) : (this.colors[color] -= 76);
     }
+    this.colors[color] > 255 ? (this.colors[color] = 255) : this.colors[color];
     const rgb = this._colorsToRgba();
-    this.setColor(rgb);
+    this._setColor(rgb);
   }
 
   showError(command) {
     this.showColorPicked.textContent = `Didn't quite catch it. Did you say "${command}"? Could you repeat, please?`;
-  }
-
-  setColor(color) {
-    this.body.style.backgroundColor = color;
-    this._getHex(color);
   }
 }
 const pickColor = new ColorPicker();
