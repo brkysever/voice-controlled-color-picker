@@ -60,7 +60,7 @@ body {
 		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
 		U+FEFF, U+FFFD;
 }
-.color__picker {
+.colorPicker {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -72,23 +72,26 @@ body {
 	box-sizing: border-box;
 }
 @media only screen and (max-width: 1024px) {
-	.color__picker {
+	.colorPicker {
 		padding-bottom: 15%;
 	}
 }
-.color__picker__hi {
+.colorPicker__hi {
 	line-height: 1.5;
+	background: #fff;
+	padding: 1% 2%;
+	border-radius: 3px;
 }
-.color__picker__introduction {
+.colorPicker__introduction {
 	transform: translateY(30px);
 	opacity: 0;
 	transition: transform 500ms ease-out, opacity 650ms ease-in;
 }
-.color__picker__introduction.isShown {
+.colorPicker__introduction.isShown {
 	opacity: 1;
 	transform: none;
 }
-.introductions {
+.toggleIntroductions {
 	position: absolute;
 	bottom: 5%;
 	left: 50%;

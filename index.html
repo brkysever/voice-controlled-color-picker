@@ -8,30 +8,26 @@
 		<title>Color Picker. &#x1F3A8;</title>
 	</head>
 	<body>
-		<div class="color__picker">
-			<div class="color__picker__hi">
+		<div class="colorPicker">
+			<div class="colorPicker__hi">
 				<h1>Hey!</h1>
 				<h2>
 					This is a voice controlled color picker, click the button down for
 					introductions.
 				</h2>
 			</div>
-			<div class="color__picker__introduction">
+			<div class="colorPicker__introduction">
 				<h5>$rgb-colors: [red, green, blue];</h5>
 				<p>After enabling your microphone:</p>
 				<ul>
-					<li>“Reset ${rgb-color}”: gets ${rgb-color}.</li>
+					<li>“Reset": resets the application.</li>
 					<li>
 						“More/less ${rgb-color}”: adds/subtracts 30% of the ${rgb-color}
-					</li>
-					<li>
-						“A little more/less ${rgb-color}”: adds/subtracts 15% of the
-						${rgb-color}
 					</li>
 				</ul>
 			</div>
 		</div>
-		<button class="introductions" type="button">i</button>
+		<button class="toggleIntroductions" type="button">i</button>
 		<script src="main.js"></script>
 	</body>
 </html>
