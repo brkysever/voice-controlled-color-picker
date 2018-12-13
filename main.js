@@ -28,6 +28,15 @@ class ColorPicker {
   }
 
   color({ color, aLittle = false, less = false, reset = false }) {
+    if (
+      this.colors.red >= 250 &&
+      this.colors.green >= 250 &&
+      this.colors.blue >= 250
+    ) {
+      this.showColorPicked.innerHTML = `Seems you are stuck with white. This is what happens if you blend too much of everything. <br/>
+      Just say "Reset '$color-name'" and you will start over.
+      <a href="https://en.wikipedia.org/wiki/RGB_color_model">Learn more about RGB Colors</a>`;
+    }
     if (this.firstCall || reset) {
       Object.keys(this.color).forEach(
         resetColor => (this.color[resetColor] = 0)
